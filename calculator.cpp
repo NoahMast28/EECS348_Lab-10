@@ -71,8 +71,8 @@ double parse_number(const std::string &expression) {
 }
 
 // Converts a given string into an integer
-int string_to_int(const std::string &input_string) {
-    int result = 0; // Initializes the result variable
+long long string_to_long(const std::string &input_string) {
+    long long result = 0; // Initializes the result variable
 
     for (std::size_t i = 0; i < input_string.length(); i++) {
         result = result * 10 + (input_string[i] - '0'); // Shifts left and adds digit
@@ -145,11 +145,11 @@ std::string add_string_doubles(const std::string &input_num) {
     // This is allowed because I am not converting to a double and because I am
     // keeping the input and output as strings, and the only having separate
     // variables representing parts of the numbers as integers
-    int num1 = string_to_int(full_num);
-    int num2 = string_to_int(full_num2);
+    long long num1 = string_to_long(full_num);
+    long long num2 = string_to_long(full_num2);
 
     // Performs addition or subtraction
-    int result;
+    long long result;
     if (mode == 0) {
         result = num1 + num2;
     } else {
