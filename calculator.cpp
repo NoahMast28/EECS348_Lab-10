@@ -84,7 +84,7 @@ int string_to_int(const std::string &input_string) {
 std::string add_string_doubles(const std::string &input_num) {
     int mode; // Initialize variable for mode (addition/subtraction)
 
-    std::string num; // Initializes variable to hold num after sign is removed
+    std::string num = input_num; // Initializes variable to hold num after sign is removed
 
     // Sets the mode of operation, and removes sign if a sign exists
     if (input_num[0] == '+') {
@@ -94,7 +94,7 @@ std::string add_string_doubles(const std::string &input_num) {
         mode = 0; // Sets mode to addition (-(a + b)) which is equivalent to (-a - b)
         num = num.substr(1); // Removes the sign character
     } else {
-        num = input_num;
+        mode = 1; // If no sign character then a positive value is inferred
     }
 
     // Finds the position of '.' if one exists
