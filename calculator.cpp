@@ -53,11 +53,12 @@ bool is_valid_double(const std::string &line) {
         }
     }
 
+    // If there is only 0 or 1 dots it returns true
     if (num_dots <= 1) {
         return true;
     }
 
-    return false;
+    return false; // If there are more than one dots it returns false
 }
 
 // Converts a given string into an integer
