@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 
     while (std::getline(file, line)) { // Iterates over each line of the file
         if (is_valid_double(line)) { // Checks if the line contains a valid double number
-            std::string result = parse_number(line); // Adds the double with the double specified in the lab instructions
+            std::string result = add_string_doubles(line); // Adds the double with the double specified in the lab instructions
             std::cout << line << " + (-123.456) = " << result << std::endl; // Prints the result
         } else {
             std::cout << line << " is not a valid double" << std::endl // Informs the user that the line did not contain a vaild double
